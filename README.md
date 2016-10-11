@@ -26,5 +26,5 @@ http://php.net/manual/en/timezones.php
 
 #Note :
 #you can use "Timestamp" like this :
-$date = "@1367367755";
-put '@' befor timestamp
+- $date = "@1367367755";
+- put '@' befor timestamp
