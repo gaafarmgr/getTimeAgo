@@ -24,5 +24,5 @@ $timezone = 'Asia/Qatar';
 * 2nd @param [timezone]  : {Asia/Qatar by default in function arguments}
 * Exmp : echo GetTimeAgo($date, 'Asia/Qatar');
 */
-echo ArGetTimeAgo($date1, $date2, $timezone);
+echo EnGetTimeAgo($date1, $date2, $timezone);
 ?>
