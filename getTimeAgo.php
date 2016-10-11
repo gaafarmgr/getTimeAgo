@@ -1,5 +1,5 @@
 <?php
-function EnGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $full = false) {
+function EnGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $showFull = false) {
 
     // set timezone :: by default [Asia/Qatar] +3
     date_default_timezone_set($timezone);
@@ -20,22 +20,22 @@ function EnGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $full = fal
     $diff->d -= $diff->w * 7;
 
     // string date & time format
-    $string = array('y' => 'year','m' => 'month','w' => 'week','d' => 'day','h' => 'hour','i' => 'minute','s' => 'second',);
+    $value_arr = array('y' => 'year','m' => 'month','w' => 'week','d' => 'day','h' => 'hour','i' => 'minute','s' => 'second',);
 
     // loop to set format string after get operation difference value
-    foreach ($string as $k => &$v) {
-        if ($diff->$k) {
-            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+    foreach ($value_arr as $key => &$str) {
+        if ($diff->$key) {
+            $str = $diff->$key . ' ' . $str . ($diff->$key > 1 ? 's' : '');
         } else {
-            unset($string[$k]);
+            unset($value_arr[$key]);
         }
     }
 
     // @param false by default - set {true} to show full date time [Year Mont day hour minut second]
-    if (!$full) $string = array_slice($string, 0, 1);
+    if (!$showFull) $value_arr = array_slice($value_arr, 0, 1);
 
     // return how many days ago
-    return $string ? implode(', ', $string).' ago' : 'just now';
+    return $value_arr ? implode(', ', $value_arr).' ago' : 'just now';
 }
 
 
@@ -46,7 +46,7 @@ function EnGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $full = fal
  * function ArGetTimeAgoAr()
  * Arabic Lang
  */
-function ArGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $full = false) {
+function ArGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $showFull = false) {
 
     // set timezone :: by default [Asia/Qatar] +3
     date_default_timezone_set($timezone);
@@ -89,7 +89,7 @@ function ArGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $full = fal
 
 
     // string date & time format Single
-    $string = array(
+    $arr_value = array(
         'y' => $year,
         'm' => $month,
         'w' => $week,
@@ -101,7 +101,7 @@ function ArGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $full = fal
 
 
     // string date & time format collection
-    $strings = array(
+    $arr_values = array(
         'y' => $years,
         'm' => $months,
         'w' => $weeks,
@@ -113,19 +113,19 @@ function ArGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $full = fal
 
 
     //loop to set format string after get operation difference value
-    foreach ($string as $k => &$v) {
+    foreach ($arr_value as $key => &$str) {
 
-        if ( $diff->$k ) {
-            $v = $diff->$k . ' '. ( $diff->$k > 2 && $diff->$k <= 11 ? $strings[$k] : $string[$k] );
+        if ( $diff->$key ) {
+            $str = $diff->$key . ' '. ( $diff->$key > 2 && $diff->$key <= 11 ? $arr_values[$key] : $arr_value[$key] );
         } else {
-            unset($string[$k]);
+            unset($arr_value[$key]);
         }
     }
 
     // @param false by default - set {true} to show full date time [Year Mont day hour minut second]
-    if (!$full) $string = array_slice($string, 0, 1);
+    if (!$showFull) $arr_value = array_slice($arr_value, 0, 1);
 
     // return how many days ago
-    return $string ? $ago .' '. implode(', ', $string) : $now;
+    return $arr_value ? $ago .' '. implode(', ', $arr_value) : $now;
 }
 ?>
