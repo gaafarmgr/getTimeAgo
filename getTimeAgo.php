@@ -1,5 +1,9 @@
 <?php
-function EnGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $showFull = false) {
+/**
+ * function EnGetTimeAgoAr()
+ * English Lang
+ */
+function EnGetTimeAgo( $datenow, $datetime, $timezone = 'Asia/Qatar', $showDays = false ) {
 
     // set timezone :: by default [Asia/Qatar] +3
     date_default_timezone_set($timezone);
@@ -31,12 +35,21 @@ function EnGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $showFull =
         }
     }
 
-    // @param false by default - set {true} to show full date time [Year Mont day hour minut second]
-    if (!$showFull) $value_arr = array_slice($value_arr, 0, 1);
 
-    // return how many days ago
-    return $value_arr ? implode(', ', $value_arr).' ago' : 'just now';
-}
+
+    if($showDays == true) {
+        /* get time of days if set true last argument */
+        return $diff->days .' '. 'days ago';
+    }else{
+        /* return how many days ago */
+        $value_arr = array_slice($value_arr, 0, 1);
+        return $value_arr ? implode(', ', $value_arr).' ago' : 'just now';
+    }
+
+}/*End Func EnGetTimeAgo*/
+
+
+
 
 
 
@@ -46,7 +59,7 @@ function EnGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $showFull =
  * function ArGetTimeAgoAr()
  * Arabic Lang
  */
-function ArGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $showFull = false) {
+function ArGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $showDays = false) {
 
     // set timezone :: by default [Asia/Qatar] +3
     date_default_timezone_set($timezone);
@@ -122,10 +135,14 @@ function ArGetTimeAgo($datenow, $datetime, $timezone = 'Asia/Qatar', $showFull =
         }
     }
 
-    // @param false by default - set {true} to show full date time [Year Mont day hour minut second]
-    if (!$showFull) $arr_value = array_slice($arr_value, 0, 1);
+    if($showDays == true) {
+        /* get time of days if set true last argument */
+        return $ago .' '. $diff->days .' '. $day;
+    }else{
+        /* return how many days ago */
+        $arr_value = array_slice($arr_value, 0, 1);
+        return $arr_value ? $ago .' '. implode(', ', $arr_value) : $now;
+    }
 
-    // return how many days ago
-    return $arr_value ? $ago .' '. implode(', ', $arr_value) : $now;
-}
+}/*End Func ArGetTimeAgo*/
 ?>
