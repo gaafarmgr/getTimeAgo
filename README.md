@@ -14,6 +14,9 @@ $date = "2001-10-11 11:03:20";
 <h4>Set Your Country TimeZone</h4>
 $timezone = 'Asia/Qatar';
 
+<h4>if want to get number days of two dates</h4>
+ste [true] last argument
+
 <h4>you can check list from php website</h4>
 http://php.net/manual/en/timezones.php
 
