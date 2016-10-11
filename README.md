@@ -25,6 +25,6 @@ http://php.net/manual/en/timezones.php
 
 
 #Note :
-<h4>you can use "Timestamp" like this :</h4>
+<h4>you can use also "Timestamp" like this :</h4>
 - $date = "@1367367755";
 - put '@' befor timestamp
