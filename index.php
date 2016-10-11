@@ -19,10 +19,13 @@ $timezone = 'Asia/Qatar';
 
 
 /***
-* 1st @param [noraml datetime]
-* 1st @param [timestamp @datetime] should be put '@' before timestamp number
-* 2nd @param [timezone]  : {Asia/Qatar by default in function arguments}
-* Exmp : echo GetTimeAgo($date, 'Asia/Qatar');
+* 1st @param [datetime]
+* 2nd @param [timestamp] should be put '@' before timestamp number
+* 3rd @param [timezone]  : {Asia/Qatar by default in function arguments}
+* 4th @param [true]  : set {true} to get number of dayes
+* Exmp : EnGetTimeAgo($date, $date2, 'Asia/Qatar') or EnGetTimeAgo($date, $date2, 'Asia/Qatar', true);
 */
-echo EnGetTimeAgo($date1, $date2, $timezone);
+
+echo ArGetTimeAgo($date1, $date2, $timezone);
+//echo EnGetTimeAgo($date1, $date2, $timezone, true); //get number of dayes between 2 dates
 ?>
