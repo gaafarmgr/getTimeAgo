@@ -23,10 +23,10 @@ $timezone = 'Asia/Qatar';
 http://php.net/manual/en/timezones.php
 
 #for English :
-echo EnGetTimeAgo($datenow, $date, $timezone);
+<?php echo EnGetTimeAgo($datenow, $date, $timezone);?>
 
 #for Arabic
-echo ArGetTimeAgo($datenow, $date, $timezone);
+<?php echo ArGetTimeAgo($datenow, $date, $timezone);?>
 
 
 #Note :
