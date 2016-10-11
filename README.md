@@ -1,7 +1,7 @@
-# getTimeAgo
+# getTimeAgo php function
 PHP Function to calculate time between two dates
 
-How to use:
+#How to use:
 
 #include files:
 include 'getTimeAgo.php';
