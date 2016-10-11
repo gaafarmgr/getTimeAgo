@@ -1,5 +1,5 @@
 # getTimeAgo
-* PHP Function to calculate time between two dates
+<h2> PHP Function to calculate time between two dates </h2>
 
 # How to Useg:
 require file getTimeAgo.php to your page
