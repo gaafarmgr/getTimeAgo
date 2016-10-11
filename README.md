@@ -1,14 +1,9 @@
-# getTimeAgo php function
+# getTimeAgo
 PHP Function to calculate time between two dates
 
-#How to use:
-
-#include files:
-include 'getTimeAgo.php';
-
-
-$date = "@1367367755";
-$date = "2001-10-11 11:03:00";
+# How to Useg:
+require file getTimeAgo.php to your page
+require 'getTimeAgo.php';
 
 #put yor firest datetime 
 $datenow = "2013-10-11 11:03:00";
